@@ -15,5 +15,14 @@
   "bugs": {
     "url": "https://github.com/project-dobby/dobby-fe/issues"
   },
-  "homepage": "https://github.com/project-dobby/dobby-fe#readme"
+  "homepage": "https://github.com/project-dobby/dobby-fe#readme",
+  "devDependencies": {
+    "css-loader": "^2.1.0",
+    "ts-loader": "^5.3.3",
+    "typescript": "^3.2.4",
+    "vue": "^2.5.22",
+    "vue-loader": "^15.6.1",
+    "vue-template-compiler": "^2.5.22",
+    "webpack": "^4.29.0"
+  }
 }
