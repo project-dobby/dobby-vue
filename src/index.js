@@ -20,7 +20,7 @@ const router = new VueRouter({
 	routes // short for `routes: routes`
 });
 
-const app = new Vue({
+new Vue({
 	router,
 	store
 }).$mount("#app");

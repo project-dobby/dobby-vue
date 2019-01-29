@@ -1,10 +1,14 @@
 <template>
-    <div>
-        <h2>Counter</h2>
-        <div>{{ counter.index }}</div>
-        <button @click="decrement()">-</button>
-        <button @click="increment()">+</button>
-    </div>
+  <div>
+    <h2>Counter</h2>
+    <div>{{ counter.index }}</div>
+    <button @click="decrement()">
+      -
+    </button>
+    <button @click="increment()">
+      +
+    </button>
+  </div>
 </template>
 
 <script>

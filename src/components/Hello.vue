@@ -1,9 +1,9 @@
 <template>
-    <div id="app">
-        <div class="greeting">
-            {{ message }}
-        </div>
+  <div id="app">
+    <div class="greeting">
+      {{ message }}
     </div>
+  </div>
 </template>
 
 <script>
