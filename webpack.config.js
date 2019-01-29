@@ -1,11 +1,19 @@
 const path = require('path')
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
 module.exports = {
+    mode : 'development',
     entry: './src/index.js',
+    devtool: 'inline-source-map',
     output: {
-        path: path.resolve(__dirname, './dist'),
+        path: path.resolve(__dirname, 'dist'),
         publicPath: '/dist/',
         filename: 'build.js'
+    },
+    resolve: {
+        alias: {
+            vue: 'vue/dist/vue.js'
+        }
     },
     module: {
         rules: [
@@ -32,9 +40,12 @@ module.exports = {
             }
         ]
     },
+	plugins: [
+		new VueLoaderPlugin()
+	],
     devServer: {
         historyApiFallback: true,
-        noInfo: true
+        port: 9000
     },
     performance: {
         hints: false
