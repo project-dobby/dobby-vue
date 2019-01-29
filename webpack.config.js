@@ -13,7 +13,8 @@ module.exports = {
     resolve: {
         alias: {
             vue: 'vue/dist/vue.js'
-        }
+        },
+	      extensions: ['.js', '.vue']
     },
     module: {
         rules: [
@@ -37,6 +38,10 @@ module.exports = {
                 options: {
                     name: '[name].[ext]?[hash]'
                 }
+            },
+            {
+                test: /\.css$/,
+                loader: 'css-loader'
             }
         ]
     },
