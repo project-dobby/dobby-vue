@@ -6,7 +6,7 @@
   "scripts": {
     "build": "webpack",
     "start": "webpack-dev-server",
-    "lint" : "eslint --ext .js,.vue ./ --fix",
+    "lint": "eslint --ext .js,.vue ./ --fix",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -22,6 +22,7 @@
   "devDependencies": {
     "css-loader": "^2.1.0",
     "eslint": "^5.12.1",
+    "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-vue": "^5.1.0",
     "vue": "^2.5.22",
     "vue-loader": "^15.6.1",
