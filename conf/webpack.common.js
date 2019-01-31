@@ -22,12 +22,6 @@ module.exports = {
       {
         test: /\.vue$/,
         loader: 'vue-loader',
-        options: {
-          loaders: {
-            scss: 'vue-style-loader!css-loader!sass-loader',
-            sass: 'vue-style-loader!css-loader!sass-loader?indentedSyntax',
-          },
-        },
       },
       {
         test: /\.(png|jpg|gif|svg)$/,
@@ -37,8 +31,8 @@ module.exports = {
         },
       },
       {
-        test: /\.css$/,
-        loader: 'css-loader',
+        test: /\.s[a|c]ss$/,
+        loader: 'style-loader!css-loader!sass-loader',
       },
     ],
   },
@@ -47,6 +41,6 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'Production',
     }),
-	  new VueLoaderPlugin()
+    new VueLoaderPlugin(),
   ],
 };

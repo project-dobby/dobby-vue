@@ -16,8 +16,6 @@ export default {
 };
 </script>
 
-<style>
-    .greeting {
-        font-size: 20px;
-    }
+<style lang="scss" scoped>
+  @import 'home.scss';
 </style>

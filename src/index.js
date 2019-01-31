@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import Hello from 'src/components/Hello';
-import Counter from 'src/components/Counter';
+import Hello from 'src/components/Home/Hello';
+import Counter from 'src/components/Conter/Counter';
 import store from 'src/store';
 
 Vue.use(VueRouter);
