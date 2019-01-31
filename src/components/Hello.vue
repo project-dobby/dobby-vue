@@ -7,13 +7,13 @@
 </template>
 
 <script>
-	export default {
-		data() {
-			return {
-				message: 'hi'
-			}
-		}
-	}
+export default {
+  data() {
+    return {
+      message: 'hi',
+    };
+  },
+};
 </script>
 
 <style>

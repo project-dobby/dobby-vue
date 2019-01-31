@@ -3,7 +3,9 @@ module.exports = {
 		'airbnb-base',
 		'plugin:vue/recommended'
 	],
-	rules: {},
+	rules: {
+		'no-param-reassign': 'off'
+	},
 	settings: {
 		'import/resolver': {
 			webpack: {
