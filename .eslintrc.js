@@ -3,6 +3,12 @@ module.exports = {
 		'airbnb-base',
 		'plugin:vue/recommended'
 	],
-	rules: {
+	rules: {},
+	settings: {
+		'import/resolver': {
+			webpack: {
+				config: 'webpack.config.js'
+			}
+		}
 	}
 };
