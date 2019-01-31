@@ -1,21 +1,19 @@
-/* global require, __dirname, module */
-
-const path = require('path');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
+const path = require('./path');
 
 module.exports = {
-  mode: 'development',
   entry: './src/index.js',
-  devtool: 'inline-source-map',
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.dist,
     publicPath: '/dist/',
     filename: 'build.js',
   },
   resolve: {
     alias: {
-      vue: 'vue/dist/vue.js',
-      src: path.resolve(__dirname, 'src'),
+      vue: path.vue,
+      src: path.src,
     },
     extensions: ['.js', '.vue'],
   },
@@ -26,13 +24,9 @@ module.exports = {
         loader: 'vue-loader',
         options: {
           loaders: {
-            // Since sass-loader (weirdly) has SCSS as its default parse mode, we map
-            // the "scss" and "sass" values for the lang attribute to the right configs here.
-            // other preprocessors should work out of the box, no loader config like this necessary.
             scss: 'vue-style-loader!css-loader!sass-loader',
             sass: 'vue-style-loader!css-loader!sass-loader?indentedSyntax',
           },
-          // other vue-loader options go here
         },
       },
       {
@@ -49,13 +43,10 @@ module.exports = {
     ],
   },
   plugins: [
-    new VueLoaderPlugin(),
+    new CleanWebpackPlugin(['dist']),
+    new HtmlWebpackPlugin({
+      title: 'Production',
+    }),
+	  new VueLoaderPlugin()
   ],
-  devServer: {
-    historyApiFallback: true,
-    port: 9000,
-  },
-  performance: {
-    hints: false,
-  },
 };
