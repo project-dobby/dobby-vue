@@ -8,7 +8,7 @@ const getOption = (method, url, data, options = {}) => ({
   method,
   timeout: 3000,
   headers: {
-    'Content-Type': 'application/x-www-form-urlencoded',
+    'Content-Type': 'application/json',
   },
   url,
   data: qs.stringify(data),
