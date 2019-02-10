@@ -1,19 +1,13 @@
 import axios from 'axios';
-import qs from 'qs';
 
 const BASE_URL = 'http://dobby.work';
 
-const getOption = (method, url, data, options = {}) => ({
+const instance = axios.create({
   baseURL: BASE_URL,
-  method,
   timeout: 3000,
   headers: {
     'Content-Type': 'application/json',
   },
-  url,
-  data: qs.stringify(data),
-  transformResponse: response => JSON.parse(response),
-  ...options,
 });
 
 axios.interceptors.response.use(
@@ -21,7 +15,7 @@ axios.interceptors.response.use(
   error => Promise.reject(error),
 );
 
-export default {
-  get: (url, data, options) => axios(getOption('GET', url, data, options)),
-  post: (url, data, options) => axios(getOption('POST', url, data, options)),
-};
+// https://github.com/axios/axios
+// axios.get(url[, config])
+// axios.post(url[, data[, config]])
+export default instance;
