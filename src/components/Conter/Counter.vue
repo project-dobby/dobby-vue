@@ -12,19 +12,19 @@
 </template>
 
 <script>
-	import {mapState, mapActions} from 'vuex';
+import { mapState, mapActions } from 'vuex';
 
-	export default {
-		computed: mapState({
-			counter: state => state.counter
-		}),
-		methods: {
-			...mapActions('counter', [
-				'increment',
-				'decrement'
-			])
-		}
-	}
+export default {
+  computed: mapState({
+    counter: state => state.counter,
+  }),
+  methods: {
+    ...mapActions('counter', [
+      'increment',
+      'decrement',
+    ]),
+  },
+};
 </script>
 
 <style scoped>

@@ -1,34 +1,34 @@
-const state = {
-	index: 0
+const initialState = {
+  index: 0,
 };
 
 // getters
-const getters = {}
+const getters = {};
 
 // actions
 const actions = {
-	increment({ commit }) {
-		commit('increment');
-	},
-	decrement({ commit }) {
-		commit('decrement');
-	}
+  increment({ commit }) {
+    commit('increment');
+  },
+  decrement({ commit }) {
+    commit('decrement');
+  },
 };
 
 // mutations
 const mutations = {
-		increment(state) {
-			state.index++
-		},
-		decrement(state) {
-			state.index--
-		}
-}
+  increment(state) {
+    state.index += 1;
+  },
+  decrement(state) {
+    state.index -= 1;
+  },
+};
 
 export default {
-	namespaced: true,
-	state,
-	getters,
-	actions,
-	mutations
-}
+  namespaced: true,
+  initialState,
+  getters,
+  actions,
+  mutations,
+};
